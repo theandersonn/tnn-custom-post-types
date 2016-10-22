@@ -1,6 +1,6 @@
 <?php 
 /*--------------------------------------------------------------
-	INSERE METABOX
+	INSERT METABOX
 --------------------------------------------------------------*/
 add_action('add_meta_boxes', 'btwp_produtos_link_box');
 
@@ -16,10 +16,10 @@ function btwp_produtos_link_box(){
 	);	
 }
 
-// INSERE METABOX CAMPOS DE FORMULÁRIO
+// INSERT FORM FIELDS
 function btwp_produtos_link_content(){
 
-	// INSERE NONCES
+	// INSERT NONCES
 	wp_nonce_field('produtos_metabox_form_save', 'produtos_link_box_content_nonce');	
 
 	$link = get_post_meta( get_the_ID(), '_produtos_link', true )
@@ -30,20 +30,20 @@ function btwp_produtos_link_content(){
 	<?php
 }
 
-// TRATAMENTO DE DADOS AO SALVAR 
+// SAVE THE DATA PROCESSING
 add_action('save_post', 'btwp_produtos_link_save');
 
 function btwp_produtos_link_save( $post_id ){
 
-	// VERIFICA  CONSTANTES
+	// CONSTANT CHECKS
 	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )
 		return;
 
-	// VERIFICA SE O POST TYPE ESTÁ CORRETO
+	// VERIFY IF THE POST TYPE IS CORRECT
 	if ( 'produtos' != get_post_type() || !current_user_can('edit_post', $post_id) )
 		return;
 
-	// VERIFICA SE ESTÁ RECEBENDO O NONCE E SE OS DADOS ESTÃO VINDO DO WORDPRESS
+	// VERIFY IF YOU ARE RECEIVING NONCE AND IF THE DATA ARE COMING OF WORDPRESS
 	check_admin_referer('produtos_metabox_form_save', 'produtos_link_box_content_nonce');
 
 	$portfolio_link = sanitize_text_field($_POST['produtos_link']);
