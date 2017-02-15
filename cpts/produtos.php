@@ -27,6 +27,7 @@ function btwp_custom_post_produtos(){
 		'has_archive' 		=> true,
 		'menu_icon' 		=> 'dashicons-cart', // https://developer.wordpress.org/resource/dashicons/		
 		'menu_position'		=> 5,
+		'show_in_nav_menus' => true,
 		'supports' 			=> array ('title', 'editor', 'thumbnail', 'excerpt', 'comments')
 	);
 
