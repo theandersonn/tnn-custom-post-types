@@ -143,7 +143,6 @@ function btwp_show_filter_produtos_tag() {
 		
 		foreach ($filters as $tax_slug) {
 			$tax_obj = get_taxonomy($tax_slug);
-			$tax_name = $tax_obj->labels->name;
 			$terms = get_terms($tax_slug);
 		
 			echo "<select name='$tax_slug' id='$tax_slug' class='postform'>";
