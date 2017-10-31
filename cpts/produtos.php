@@ -63,7 +63,7 @@ function btwp_taxonomies_produtos_category(){
 		'show_admin_column'		=> true
 	);
 
-	register_taxonomy('produtos_category', 'produtos', $args);
+	register_taxonomy('produtos-category', 'produtos', $args);
 }
 
 /*--------------------------------------------------------------
@@ -74,7 +74,7 @@ add_action( 'restrict_manage_posts', 'btwp_show_filter_produtos_category' );
 function btwp_show_filter_produtos_category() {
 	
 	global $typenow;
-	$taxonomy = 'produtos_category';
+	$taxonomy = 'produtos-category';
 
 	if( $typenow == 'produtos' ){
 		$filters = array($taxonomy);
@@ -125,7 +125,7 @@ function btwp_taxonomies_produtos_tag(){
 		'show_admin_column'		=> true,
 	);
 
-	register_taxonomy('produtos_tag', 'produtos', $args);
+	register_taxonomy('produtos-tag', 'produtos', $args);
 }
 
 /*--------------------------------------------------------------
@@ -136,7 +136,7 @@ add_action( 'restrict_manage_posts', 'btwp_show_filter_produtos_tag' );
 function btwp_show_filter_produtos_tag() {
 	
 	global $typenow;
-	$taxonomy = 'produtos_tag';
+	$taxonomy = 'produtos-tag';
 
 	if( $typenow == 'produtos' ){
 		$filters = array($taxonomy);
