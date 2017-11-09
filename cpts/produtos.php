@@ -28,7 +28,7 @@ function btwp_custom_post_produtos(){
 		'menu_icon' 		=> 'dashicons-cart', // https://developer.wordpress.org/resource/dashicons/		
 		'menu_position'		=> 5,
 		'show_in_nav_menus' => true,
-		'supports' 			=> array ('title', 'editor', 'thumbnail', 'excerpt', 'comments')
+		'supports' 			=> array ('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'author')
 	);
 
 	register_post_type('produtos', $args);
