@@ -10,5 +10,4 @@ Author URI: http://theandersonn.com/
 */
 
 require_once( plugin_dir_path( __FILE__ ) . '/functions/general.php' );
-require_once( plugin_dir_path( __FILE__ ) . '/functions/meta-boxes.php' );
-require_once( plugin_dir_path( __FILE__ ) . '/cpts/produtos.php' );
+require_once( plugin_dir_path( __FILE__ ) . '/cpts/clientes.php' );

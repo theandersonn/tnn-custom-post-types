@@ -2,17 +2,17 @@
 /*--------------------------------------------------------------
 	MODIFY UPDATE MESSAGES
 --------------------------------------------------------------*/
-add_filter('post_updated_messages', 'btwp_updated_messages');
+add_filter('post_updated_messages', 'thepress_updated_messages');
 
-function btwp_updated_messages ($messages){
+function thepress_updated_messages ($messages){
 	global $post_ID;
 
-	$messages['produtos'] = array(
+	$messages['clientes'] = array(
 		0 => '',
-		1 => 'Produto Atualizado. <a href="'. esc_url( get_permalink( $post_ID ) ) .'">Visualizar Produto</a>',
-		4 => 'Produto Atualizado.',
-		6 => 'Produto Publicado. <a href="'. esc_url( get_permalink( $post_ID ) ) .'">Visualizar Produto</a>',
-		7 => 'Produto Salvo.'
+		1 => 'Cliente Atualizado. <a href="'. esc_url( get_permalink( $post_ID ) ) .'">Visualizar Cliente</a>',
+		4 => 'Cliente Atualizado.',
+		6 => 'Cliente Publicado. <a href="'. esc_url( get_permalink( $post_ID ) ) .'">Visualizar Cliente</a>',
+		7 => 'Cliente Salvo.'
 	);
 
 	return $messages;
